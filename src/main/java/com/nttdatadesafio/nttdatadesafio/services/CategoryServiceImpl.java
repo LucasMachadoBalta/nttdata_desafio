@@ -1,8 +1,8 @@
-package com.nttdatadesafio.nttdatadesafio.service;
+package com.nttdatadesafio.nttdatadesafio.services;
 
 import com.nttdatadesafio.nttdatadesafio.dto.CategoryDTO;
-import com.nttdatadesafio.nttdatadesafio.entity.CategoryEntity;
-import com.nttdatadesafio.nttdatadesafio.repository.CategoryRepository;
+import com.nttdatadesafio.nttdatadesafio.models.CategoryEntity;
+import com.nttdatadesafio.nttdatadesafio.repositories.CategoryRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CategoryServiceImpl implements CategoryServ {
+public class CategoryServiceImpl implements ServiceInterface {
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -20,18 +20,28 @@ public class CategoryServiceImpl implements CategoryServ {
     private ModelMapper modelMapper;
 
     @Override
-    public CategoryEntity findById(Long id) {
+    public Object findById(Long id) {
         return categoryRepository.findById(id).get();
     }
 
     @Override
-    public List<CategoryEntity> findAll() {
+    public List<Object> findAll() {
         return new ArrayList<>(categoryRepository.findAll());
     }
 
     @Override
-    public CategoryEntity save(CategoryDTO dto) {
-        return categoryRepository.save(mapToDTO(dto));
+    public Object save(Object dto) {
+        return categoryRepository.save(mapToDTO((CategoryDTO) dto));
+    }
+
+    @Override
+    public void delete(Long id) {
+        categoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Object put(Object dto) {
+        return categoryRepository.save(mapToDTO((CategoryDTO) dto));
     }
 
     private CategoryEntity mapToDTO(CategoryDTO categoryDTO) {

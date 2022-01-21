@@ -1,4 +1,4 @@
-package com.nttdatadesafio.nttdatadesafio.entity;
+package com.nttdatadesafio.nttdatadesafio.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

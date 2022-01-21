@@ -1,6 +1,6 @@
-package com.nttdatadesafio.nttdatadesafio.repository;
+package com.nttdatadesafio.nttdatadesafio.repositories;
 
-import com.nttdatadesafio.nttdatadesafio.entity.CategoryEntity;
+import com.nttdatadesafio.nttdatadesafio.models.CategoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

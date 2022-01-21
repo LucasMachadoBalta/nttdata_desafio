@@ -1,16 +1,16 @@
 
-package com.nttdatadesafio.nttdatadesafio.repository;
+package com.nttdatadesafio.nttdatadesafio.repositories;
 
-import com.nttdatadesafio.nttdatadesafio.entity.EntryEntity;
+import com.nttdatadesafio.nttdatadesafio.models.EntryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EntryRepository extends JpaRepository<EntryEntity, Long> {
 
-    List<EntryEntity> findAllById(Long id);
+    Optional<EntryEntity> findById(Long id);
 
 }
 

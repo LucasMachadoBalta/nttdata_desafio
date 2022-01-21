@@ -1,4 +1,4 @@
-package com.nttdatadesafio.nttdatadesafio.entity;
+package com.nttdatadesafio.nttdatadesafio.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
